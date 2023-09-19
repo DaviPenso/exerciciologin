@@ -8,7 +8,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Cadastro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
@@ -22,47 +22,27 @@ session_start();
     <main class="form-signin w-50 m-auto">
         <div class="card mt-5">
             <div class="card-body shadow">
-                <form id="login-usuarios">
+                <form id="cadastro-usuarios">
                     <h1 class="h3 mb-3 fw-normal text-center mt-5">Exercício Login</h1>
 
-                    <div class="form-floating">
-                        <input type="email" class="form-control" id="email" placeholder="Email do usuário">
+                    <div class="form-group mb-3">
                         <label for="email">Email</label>
+                        <input type="email" class="form-control form-control-lg" id="email" placeholder="Informe seu email">
                     </div>
-                    <div class="form-floating">
-                        <input type="password" class="form-control" id="senha" placeholder="Senha do usuário">
+                    <div class="form-group mb-3">
                         <label for="senha">Senha</label>
+                        <input type="password" class="form-control form-control-lg" id="senha" placeholder="Informe uma senha">
                     </div>
-                    <div class="text-center">
-                        <button class="btn btn-primary w-50 py-2 mt-4" type="submit">Acessar</button>
+                    <div class="form-group mb-3">
+                        <label for="senha2">Repita sua senha</label>
+                        <input type="password" class="form-control form-control-lg" id="senha2" placeholder="Repita sua senha">
+                    </div>
+                    <div class="text-center d-grid">
+                        <button class="btn btn-primary py-2 mt-4" type="submit">Cadastrar</button>
                     </div>
                     <p class="mt-5 mb-3 text-body-secondary">&copy; Davi Penso - 2023</p>
 
-                    <div id="userdata">
-                        <?php
-                        if (!empty($_SESSION['LOGADO']) && !empty($_SESSION['USER'])) {
-                        ?>
-                            <div class='mt-3 border-top pt-3'>
-                                <h5>Dados do usuário</h5>
-                                Nome: <?php echo $_SESSION['USER']->nome; ?> <br>
-                                Email: <?php echo $_SESSION['USER']->email; ?> <br>
-                            </div>
-                        <?php
-                        }
-                        ?>
-                    </div>
-
-                    <?php
-                    if (!empty($_SESSION['LOGADO']) && !empty($_SESSION['USER'])) {
-                    ?>
-                        <div class="mt-4">
-                            <button type="button" id="btn-logout" class="btn btn-secondary">Logout</button>
-                        </div>
-
-                    <?php
-                    }
-                    ?>
-
+                    <div id="mensagem"></div>
                 </form>
             </div>
         </div>
