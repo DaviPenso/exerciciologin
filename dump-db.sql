@@ -14,6 +14,15 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+-- Copiando estrutura para tabela login.usuarios
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `usuario` int(255) NOT NULL AUTO_INCREMENT,
+  `email` varchar(50) NOT NULL,
+  `senha` varchar(255) NOT NULL,
+  PRIMARY KEY (`usuario`) USING BTREE,
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 -- Copiando dados para a tabela login.usuarios: ~0 rows (aproximadamente)
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
